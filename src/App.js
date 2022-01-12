@@ -4,6 +4,9 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import CharacterGrid from './Components/CharacterGrid';
 import Search from './Components/Search';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Episodes from './Components/Episodes';
+import Quotes from './Components/Quotes';
 
 function App() {
 
@@ -17,7 +20,7 @@ function App() {
         `https:www.breakingbadapi.com/api/characters?name=${query}`
         )
 
-      console.log(result.data)
+      // console.log(result.data)
       setItems(result.data);
       setIsLoading(false);
     }
@@ -28,11 +31,23 @@ function App() {
   
 
   return (
+    <Router>
     <div className="container">
       <Header/>
+      <Switch>
+      <Route exact path='/'>
       <Search getQuery={(q) => setQuery(q)}/>
       <CharacterGrid isLoading={isLoading} items={items}/>
+      </Route>
+      <Route path='/episodes'>
+        <Episodes/>
+      </Route>
+      <Route path='/quotes'>
+        <Quotes/>
+      </Route>
+      </Switch>
     </div>
+    </Router>
   );
 }
 

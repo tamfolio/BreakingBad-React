@@ -8,7 +8,6 @@ function CharacterItem({ item }) {
                         <img src={item.img} alt="" />
                         <h2>{item.name}</h2>
                     </div>
-                    <h2>{item.name}</h2>
             </div>
         </div>
     )
