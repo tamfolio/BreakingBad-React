@@ -8,6 +8,7 @@ function Header() {
         <header className='center'>
             <img src={logo} alt="" />
             <div className="links">
+                <Link to='/'>Characters</Link>
                 <Link to="/episodes">Episodes</Link>
                 <Link to="/quotes">Quotes</Link>
             </div>

@@ -85,6 +85,11 @@ input[type='text'] {
     perspective: 1000px;
 }
 
+.card:hover {
+    cursor: pointer;
+    border: 4px solid rgba(130, 236, 130, 0.541);
+}
+
 .card h1 {
     font-size: 25px;
     border-bottom: 1px #fff solid;
@@ -137,13 +142,15 @@ input[type='text'] {
 }
 
 @media (max-width: 800px) {
-    .cards {
+    .cards,
+    .episode-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (max-width: 500px) {
-    .cards {
+    .cards,
+    .episode-grid {
         grid-template-columns: 1fr;
     }
     .card img {
