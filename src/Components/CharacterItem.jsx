@@ -1,6 +1,6 @@
 import React from 'react'
 
-function CharacterItem({ item }) {
+function CharacterItem({ item ,char_id}) {
     return (
         <div>
             <div className="card">

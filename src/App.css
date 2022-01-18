@@ -141,6 +141,20 @@ input[type='text'] {
     padding-bottom: 10px;
 }
 
+.episode-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.4rem;
+}
+
+.episode-card {
+    width: 300px;
+    height: 100px;
+    background: #3fb573;
+    padding: 10px;
+    border-radius: 10px;
+}
+
 @media (max-width: 800px) {
     .cards,
     .episode-grid {
@@ -158,18 +172,10 @@ input[type='text'] {
         height: 300px;
         object-fit: contain;
     }
-}
-
-.episode-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.4rem;
-}
-
-.episode-card {
-    width: 300px;
-    height: 100px;
-    background: #3fb573;
-    padding: 10px;
-    border-radius: 10px;
+    .center {
+        flex-direction: column;
+    }
+    .links {
+        margin-bottom: 30px;
+    }
 }

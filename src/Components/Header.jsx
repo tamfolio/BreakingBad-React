@@ -10,7 +10,6 @@ function Header() {
             <div className="links">
                 <Link to='/'>Characters</Link>
                 <Link to="/episodes">Episodes</Link>
-                <Link to="/quotes">Quotes</Link>
             </div>
         </header>
     )

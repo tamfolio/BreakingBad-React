@@ -6,7 +6,7 @@ import CharacterGrid from './Components/CharacterGrid';
 import Search from './Components/Search';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Episodes from './Components/Episodes';
-import Quotes from './Components/Quotes';
+
 
 function App() {
 
@@ -41,9 +41,6 @@ function App() {
       </Route>
       <Route path='/episodes'>
         <Episodes/>
-      </Route>
-      <Route path='/quotes'>
-        <Quotes/>
       </Route>
       </Switch>
     </div>
