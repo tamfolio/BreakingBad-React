@@ -6,6 +6,7 @@ import CharacterGrid from './Components/CharacterGrid';
 import Search from './Components/Search';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Episodes from './Components/Episodes';
+import CharacterPage from './Components/CharacterPage';
 
 
 function App() {
@@ -42,6 +43,7 @@ function App() {
       <Route path='/episodes'>
         <Episodes/>
       </Route>
+      <Route path='/:char_id' component={CharacterPage}/>
       </Switch>
     </div>
     </Router>
