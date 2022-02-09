@@ -1,32 +1,28 @@
-import React, { useState, useEffect} from 'react';
-import axios from 'axios';
-import CharacterItem from './CharacterItem';
-import Spinner from './Spinner';
-import { useParams } from 'react-router-dom'
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
-function CharacterPage({ items, isLoading, match }) {
+function CharacterPage({ match, char_id }) {
+  console.log("I got here");
 
-    // const[item, setItems]=useState([]);
-    const {char_id} = useParams();
-  
-    useEffect(() => {
-      const fetchItems = async () =>{
-        const { result } = await axios(
-          `https:www.breakingbadapi.com/api/characters/${match.params.char_id}`
-          )
-  
-        
-      }
-  
-      fetchItems();
-    } )
+  const [items, setItems] = useState([]);
 
-    return isLoading ? <Spinner/> :
-    <section className='cards'>
-        {items.map((item => (
-            <h2>{item.char_id}</h2>
-        )))}
-    </section>
+  useEffect(() => {
+    const fetchItems = async () => {
+      const { data } = await axios(
+        `https:www.breakingbadapi.com/api/characters/${match.params.char_id}`
+      );
+      console.log("result", data);
+      setItems(data[0]);
+    };
+
+    fetchItems();
+  }, [setItems, match]);
+
+  return (
+    <div>
+      <h1>{items && items.name ? items.name : "Unable to get Item"}</h1>
+    </div>
+  );
 }
 
 
