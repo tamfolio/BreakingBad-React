@@ -43,7 +43,9 @@ function App() {
       <Route path='/episodes'>
         <Episodes/>
       </Route>
-      <Route path='/:char_id' component={CharacterPage}/>
+      <Route path='/characters/:id'>
+        <CharacterPage items={items} isLoading={isLoading}/>
+      </Route>
       </Switch>
     </div>
     </Router>

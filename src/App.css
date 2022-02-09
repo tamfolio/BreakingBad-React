@@ -127,6 +127,7 @@ input[type='text'] {
 .card-front h2 {
     text-align: center;
     margin-top: 20px;
+    color: #fff;
 }
 
 .card-back {

@@ -1,26 +1,33 @@
 import React, { useState, useEffect} from 'react';
-import axios from 'axios'
+import axios from 'axios';
+import CharacterItem from './CharacterItem';
+import Spinner from './Spinner';
+import { useParams } from 'react-router-dom'
 
-function CharacterPage({match,  char_id}) {
+function CharacterPage({ items, isLoading, match }) {
 
-    const[items, setItems]=useState([]);
+    // const[item, setItems]=useState([]);
+    const {char_id} = useParams();
   
     useEffect(() => {
       const fetchItems = async () =>{
         const { result } = await axios(
-          `https:www.breakingbadapi.com/api/characters/${match.params.char_id}`)
+          `https:www.breakingbadapi.com/api/characters/${match.params.char_id}`
+          )
   
-        setItems(result);
+        
       }
   
       fetchItems();
     } )
 
-  return (
-        <div>
-            <h1>{items.name}</h1>
-        </div>
-  );
+    return isLoading ? <Spinner/> :
+    <section className='cards'>
+        {items.map((item => (
+            <h2>{item.char_id}</h2>
+        )))}
+    </section>
 }
+
 
 export default CharacterPage;
