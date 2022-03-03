@@ -156,6 +156,36 @@ input[type='text'] {
     border-radius: 10px;
 }
 
+.character {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.left img {
+    width: 600px;
+    height: 70vh;
+    padding: 50px;
+    border-radius: 20%;
+}
+
+.right {
+    width: 500px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    color: #000;
+    text-align: left;
+    padding: 20px;
+    border-radius: 30px;
+}
+
+.right h3 {
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
 @media (max-width: 800px) {
     .cards,
     .episode-grid {
@@ -178,5 +208,18 @@ input[type='text'] {
     }
     .links {
         margin-bottom: 30px;
+    }
+    .character {
+        flex-direction: column;
+    }
+    .left img {
+        width: 350px;
+        height: 40vh;
+    }
+    .right {
+        width: 350px;
+    }
+    .right h3 {
+        font-size: 20px;
     }
 }
