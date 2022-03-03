@@ -10,7 +10,7 @@ function CharacterPage({ match, char_id, isLoading }) {
   useEffect(() => {
     const fetchItems = async () => {
       const { data } = await axios(
-        `https:www.breakingbadapi.com/api/characters/${match.params.char_id}`
+        `https://www.breakingbadapi.com/api/characters/${match.params.char_id}`
       );
       console.log("result", data);
       setItems(data[0]);
