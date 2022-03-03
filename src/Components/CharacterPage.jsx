@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import Spinner from './Spinner'
 
 function CharacterPage({ match, char_id, isLoading }) {
   console.log("I got here");
@@ -18,7 +19,7 @@ function CharacterPage({ match, char_id, isLoading }) {
     fetchItems();
   }, [setItems, match]);
 
-  return (
+  return isLoading ? <Spinner/> :
     <div className="character">
       <div className="left">
       <img src={items.img} alt="" />
@@ -31,7 +32,6 @@ function CharacterPage({ match, char_id, isLoading }) {
         <h3>Portrayed: {items.portrayed} </h3>
       </div>
     </div>
-  );
 }
 
 
